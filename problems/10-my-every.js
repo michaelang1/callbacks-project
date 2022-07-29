@@ -22,7 +22,7 @@ console.log(myEvery(['book', 'door', 'pen'], hasO));    // false
 *******************************************************************************/
 
 let myEvery = function (array, cb) {
-    // method 1: use for loop and a counter;
+    // method 1: use a for loop;
 
     // for (let i = 0; i < array.length; i++) {
     //     let el = array[i];
@@ -33,8 +33,8 @@ let myEvery = function (array, cb) {
 
     // return true;
 
-    // method 2: use forEach method and
-    // a counter, the above returns do not work for forEach
+    // method 2: use forEach method and a counter,
+    // the method 1 returns does not work for forEach
     // as forEach always returns undefined after the loop,
     // have to use a counter;
 
