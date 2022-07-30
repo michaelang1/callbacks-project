@@ -29,14 +29,11 @@ console.log(chainMap(4, square, half));         // 8
 console.log(chainMap(4, half, square));         // 4
 *******************************************************************************/
 
-let chainMap = function() {
-
+let chainMap = function(num, ...cbs) {
+    return cbs.reduce(function(accum, cb) {
+        return cb(accum);
+    }, num);
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = chainMap;

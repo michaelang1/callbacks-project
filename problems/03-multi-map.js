@@ -21,12 +21,15 @@ let result3 = multiMap("hi", 5, function(s) {
 console.log(result3); // hi!!!!!
 *******************************************************************************/
 
-let multiMap = function() {
+let multiMap = function(num, times, cb) {
+  let res = num;
+  
+  for (let i = 0; i < times; i++) {
+    res = cb(res);
+  }
 
+  return res;
 };
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = multiMap;

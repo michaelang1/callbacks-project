@@ -23,14 +23,17 @@ let result3 = mySome(['soup', 'noodles', 'bike', 'ship'], function(ele) {
 console.log(result3);   // true
 *******************************************************************************/
 
-let mySome = function() {
+let mySome = function(array, cb) {
+    for (let i = 0; i < array.length; i++) {
+       
+        if (cb(array[i], i, array)) {
+            return true;
+        }
+        
+    }
 
+    return false;
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = mySome;

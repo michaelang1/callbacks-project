@@ -37,14 +37,14 @@ let result6 = one(['apple', 'dog', 'food', 'cat'], function(el, idx) {
 console.log(result6);   // true
 *******************************************************************************/
 
-let one = function() {
-
+let one = function(array, cb) {
+    return array.reduce(function(accum, el, i) {
+        if (cb(el, i)) {
+            accum++;
+        }
+        return accum;
+    }, 0) === 1;
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = one;

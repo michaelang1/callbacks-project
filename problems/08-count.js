@@ -26,13 +26,21 @@ let result4 = count(['follow', 'the', 'yellow', 'brick', 'road'], function (str)
 console.log(result4); // 0
 *******************************************************************************/
 
-let count = function() {
+let count = function(array, cb) {
+    return array.reduce(function(accum, el) {
+        // if (cb(el)) {
+        //     return ++accum;
+        // } else {
+        // return accum;
+        // }
 
+        if (cb(el)) {
+            accum++;
+        }
+        return accum;
+        
+    }, 0);
 };
-
-
-
-
 
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

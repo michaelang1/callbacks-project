@@ -27,13 +27,14 @@ console.log(result4); // true
 
 *******************************************************************************/
 
-let exactly = function() {
-
+let exactly = function(array, num, cb) {
+    return array.reduce(function(accum, el) {
+        if (cb(el)) {
+            accum++;
+        }
+        return accum;
+    }, 0) === num;
 };
-
-
-
-
 
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
